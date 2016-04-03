@@ -1,0 +1,8 @@
+.idea/
+target/
+src/main/client/node_modules/
+src/main/client/bower-components/
+src/main/client/.tmp/
+src/main/client/dist/
+
+
