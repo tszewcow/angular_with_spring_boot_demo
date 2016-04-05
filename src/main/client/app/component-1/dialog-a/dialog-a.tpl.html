@@ -1,7 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
+<section>
 <h2>Hello from Dialog A!</h2>
-<img src="main/img/Koala.jpg"/>
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="item in data.books" data-ng-click="selectBook($index)" data-ng-class="{'active': $index === selectedBookIndex}">
+                    <td data-ng-bind="item.title"></td>
+                    <td>{{item.author}}</td>
+                    <td>{{item.genre}}</td>
+                    <td>{{item.year}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" data-ng-click="addBook()">Add Book</button>
+        <button class="btn btn-success" data-ng-disabled="isButtonDisabled()" data-ng-click="editBook()">Edit Book</button>
+        <button class="btn btn-danger" data-ng-click="deleteBook()" data-ng-disabled="isButtonDisabled()">Delete book</button>
+
+    </div>
+</section>
 </body>
 </html>
