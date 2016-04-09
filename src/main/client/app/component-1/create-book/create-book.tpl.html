@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<div class="modal-content">
+    <div class="modal-header">
+        <h3 class="modal-title">Create Book</h3>
+    </div>
+    <div class="modal-body">
+       <div class="row">
+            <form name="form.myForm">
+                <div class="form-group col-md-7" data-ng-class="{'has-error': form.myForm.title.$invalid && form.myForm.title.$dirty}">
+                    <label for="title" class="control-label">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" data-ng-model="book.title" data-ng-required="true"/>
+                </div>
+                <div class="form-group col-md-7" data-ng-class="{'has-error': form.myForm.author.$invalid && form.myForm.author.$dirty}">
+                    <label for="author" class="control-label">Author:</label>
+                    <input type="text" class="form-control" id="author" name="author" data-ng-model="book.author" data-ng-required="true"/>
+                </div>
+                <div class="form-group col-md-7">
+                    <label for="genre" class="control-label">Genre:</label>
+                    <input type="text" class="form-control" id="genre" name="genre" data-ng-model="book.genre"/>
+                </div>
+                <div class="form-group col-md-7">
+                    <label for="year" class="control-label">Year:</label>
+                    <input type="number" min="1900" max="2017" class="form-control" id="year" name="year" data-ng-model="book.year"/>
+                </div>
+
+            </form>
+       </div>
+
+    </div>
+    <div class="modal-footer ">
+        <button class="btn btn-primary" data-ng-disabled="form.myForm.$invalid" data-ng-click="ok()">Save</button>
+        <button class="btn btn-warning" data-ng-click="cancel()">Cancel</button>
+    </div>
+</div>
+</body>
+</html>
