@@ -5,7 +5,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var Server = require('karma').Server;
 
-gulp.task('test', ['lint', 'ngTemplates'], function (done) {
+gulp.task('test', ['ngTemplates'], function (done) {
     process.env.generateCoverage = true;
     new Server({
         configFile: __dirname + '/../karma.conf.js',

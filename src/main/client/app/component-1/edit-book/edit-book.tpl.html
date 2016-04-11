@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="modal-content">
+    <div class="modal-header">
+        <h3 class="modal-title">Edit Book!</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <form name="addBookForm">
+                <div class="group-control col-md-12" data-ng-class="{'has-error': addBookForm.title.$invalid && addBookForm.title.$dirty}">
+                    <label class="control-label">Title</label>
+                    <input type="text" class="form-control" name="title" data-ng-model="bookData.title" data-ng-required="true"/>
+                </div>
+                <div class="group-control col-md-12" data-ng-class="{'has-error': addBookForm.author.$invalid && addBookForm.author.$dirty}">
+                    <label class="control-label">Author</label>
+                    <input type="text" class="form-control" name="author" data-ng-model="bookData.author" data-ng-required="true"/>
+                </div>
+                <div class="group-control col-md-12">
+                    <label class="control-label">Genre</label>
+                    <input type="text" class="form-control" data-ng-model="bookData.genre"/>
+                </div>
+                <div class="group-control col-md-12">
+                    <label class="control-label">Year</label>
+                    <input type="number" min="1900" max="3000" class="form-control" data-ng-model="bookData.year"/>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-ng-disabled="addBookForm.$invalid" data-ng-click="edit()">OK</button>
+        <button class="btn btn-warning" data-ng-click="cancel()">Cancel</button>
+    </div>
+</div>
+</body>
+</html>
